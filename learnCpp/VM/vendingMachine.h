@@ -1,9 +1,5 @@
 #ifndef VENDINGMACHINE_H
 #define VENDINGMACHINE_H
-#include <iostream>
-#include <string>
-#include <vector>
-#include "drink.h"
 #include "coffee.h"
 #include "alcohol.h"
 using namespace std;
@@ -15,6 +11,7 @@ class VendingMachine{
 		bool isRun;
 	public:
 		VendingMachine();
+		~VendingMachine();
 		void run();
 		void printAllDrink();
 		void putMoney();
@@ -22,5 +19,6 @@ class VendingMachine{
 		void checkQuit(int inputChoice);
 		void deductBalance(int inputChoice);
 		void outDrink(int inputChoice);
+		void deleteDrinkVec();
 };
 #endif

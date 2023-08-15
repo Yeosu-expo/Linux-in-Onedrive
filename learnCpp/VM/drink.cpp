@@ -1,9 +1,8 @@
 #include "drink.h"
-#include <iostream>
-#include <string>
-#include <vector>
 
-Drink::Drink(int price=0){
+Drink::~Drink()	{}
+
+Drink::Drink(int price){
 	this->price = price;
 }
 

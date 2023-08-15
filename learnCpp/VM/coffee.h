@@ -1,16 +1,12 @@
 #ifndef COFFEE_H
 #define COFFEE_H
-#include <iostream>
-#include <string>
-#include <vector>
 #include "drink.h"
-#include "alcohol.h"
 
 class Coffee:public Drink{
 		string coffeeTpye;
 	public:
-		Coffee();
-		Coffee(int price, string coffeeTpye);
+		~Coffee();
+		Coffee(int price=2000, string coffeeTpye="Black Coffee");
 		virtual string getType();
 };
 

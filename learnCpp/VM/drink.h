@@ -7,8 +7,9 @@ using namespace std;
 
 class Drink{
 		int price;
-	public:	
-		Drink(int price);
+	public:
+		Drink(int price=0);
+		virtual ~Drink();
 		int getPrice();
 		virtual string getType();
 };

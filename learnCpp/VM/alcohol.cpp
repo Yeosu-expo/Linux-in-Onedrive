@@ -1,8 +1,11 @@
 #include "alcohol.h"
-#include <iostream>
 
-Alcohol::Alcohol(int price=0, string alcoholType="Soju"):Drink(price){
+Alcohol::Alcohol(int price, string alcoholType):Drink(price){
 	this->alcoholType=alcoholType;
+}
+
+Alcohol::~Alcohol(){
+	cout << alcoholType << " 죽을게~" << endl;
 }
 
 string Alcohol::getType(){

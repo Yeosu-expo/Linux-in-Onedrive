@@ -1,15 +1,21 @@
 #include "vendingMachine.h"
-#include <iostream>
 
 VendingMachine::VendingMachine(){
 	moneyBox=0;
 	leftMoney=0;
 	isRun=true;
 	drinkVec.push_back(new Coffee(3500, "Latte"));
+	drinkVec.push_back(new Drink());
+	drinkVec.push_back(new Coffee());
 	drinkVec.push_back(new Alcohol(50000, "AbsolutVodka"));
 	drinkVec.push_back(new Coffee(15000, "PremiumAmericano"));
+	drinkVec.push_back(new Alcohol());
 	drinkVec.push_back(new Alcohol(14900, "WON SOJU"));
 	drinkVec.push_back(new Coffee(100000, "Random Drink"));
+}
+
+VendingMachine::~VendingMachine(){
+	cout << "Vending Machine 콰직!" << endl;
 }
 
 void VendingMachine::run(){
@@ -18,9 +24,10 @@ void VendingMachine::run(){
 		putMoney();
 		int inputChoice = getChoice();
 		checkQuit(inputChoice);
-		if(this->isRun==false) return;
+		if(this->isRun==false) break;
 		outDrink(inputChoice);
 	}
+	//deleteDrinkVec();
 }
 
 void VendingMachine::printAllDrink(){
@@ -75,5 +82,11 @@ void VendingMachine::outDrink(int inputChoice){
 	}
 	cout << drinkVec[inputChoice]->getType() << " OUT!" << endl;
 	cout << "Well Thank you." << endl << endl;
+}
+
+void VendingMachine::deleteDrinkVec(){
+	for(int i=0;i<drinkVec.size();i++){
+		delete(drinkVec[i]);
+	}
 }
 
